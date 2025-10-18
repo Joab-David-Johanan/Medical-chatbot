@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical Support Chatbot — Demo</title>
+
+    <!-- ✅ Link Flask static CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2 class="brand">🩺 Medibot</h2>
+        <p class="desc">Your medical support assistant</p>
+
+        <div class="quick">
+          <div class="chip">What are common flu symptoms?</div>
+          <div class="chip">How to manage a migraine?</div>
+          <div class="chip">When should I see a doctor?</div>
+        </div>
+
+        <p class="footer-small">Note: For informational purposes only.</p>
+      </div>
+
+      <!-- Chat window -->
+      <div class="chat">
+        <div id="chat-box" class="messages">
+          <div class="msg bot">
+            Hello 👋 I’m your medical assistant. How can I help you today?
+          </div>
+        </div>
+
+        <form id="chat-form" class="composer">
+          <textarea
+            id="user-input"
+            name="msg"
+            placeholder="Type your question..."
+            required
+          ></textarea>
+          <button type="submit" class="btn">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Handle form submission
+      const form = document.getElementById("chat-form");
+      const chatBox = document.getElementById("chat-box");
+      const userInput = document.getElementById("user-input");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const msg = userInput.value.trim();
+        if (!msg) return;
+
+        // Add user's message to chat
+        appendMessage(msg, "user");
+        userInput.value = "";
+
+        // Show temporary "typing..." indicator
+        const loadingMsg = appendMessage("...", "bot", true);
+
+        try {
+          // Send message to Flask backend
+          const response = await fetch("/query", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ msg }),
+          });
+
+          const text = await response.text();
+
+          // Remove loading indicator
+          loadingMsg.remove();
+
+          // Add bot's reply
+          appendMessage(text, "bot");
+        } catch (error) {
+          loadingMsg.remove();
+          appendMessage("⚠️ Error: Could not reach the server.", "bot");
+          console.error(error);
+        }
+      });
+
+      // Helper: append message to chat box
+      function appendMessage(text, sender, isTemp = false) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("msg", sender);
+        msgDiv.textContent = text;
+        if (isTemp) msgDiv.classList.add("temp");
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        return msgDiv;
+      }
+
+      // Optional: quick prompt clicks
+      document.querySelectorAll(".chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          userInput.value = chip.textContent;
+          form.dispatchEvent(new Event("submit"));
+        });
+      });
+    </script>
+  </body>
+</html>
