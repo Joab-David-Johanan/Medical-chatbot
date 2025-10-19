@@ -75,10 +75,8 @@ def index():
 def chat():
     msg = request.form["msg"]
     input=msg
-    print(input)
     response=conversational_rag_chain.invoke({"input": msg, "chat_history": chat_history})
     update_chat_history(chat_history=chat_history,question=input,AIresponse=response['answer'])
-    print("Response :", response["answer"])
     return str(response["answer"])
 
 if __name__=='__main__':
