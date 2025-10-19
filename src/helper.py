@@ -3,6 +3,7 @@ from typing import List
 from langchain.schema import Document
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_core.messages import HumanMessage,AIMessage
 
 
 def extract_text_from_pdf(pdf_path):
@@ -49,3 +50,14 @@ def download_embeddings():
         model_name=model
     )
     return embeddings
+
+
+def update_chat_history(chat_history,question,AIresponse):
+    """
+    Updates the chat history so that the conversational rag chain understands the context
+    """
+    chat_history.extend([
+        HumanMessage(content=question),
+        AIMessage(content=AIresponse)
+    ])
+    return chat_history
