@@ -4,7 +4,7 @@ on:
   push:
     branches: [main] # run CI on pushes to main
     tags:
-      - "v*" # run both CI & CD on version tags
+    #  - "v*" # run both CI & CD on version tags
 jobs:
   Continuous-Integration:
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
   Continuous-Deployment:
     needs: Continuous-Integration
     runs-on: self-hosted
-    if: startsWith(github.ref, 'refs/tags/v') # ✅ Only run on version tags
+    #if: startsWith(github.ref, 'refs/tags/v') # ✅ Only run on version tags
     steps:
       - name: Checkout
         uses: actions/checkout@v3
