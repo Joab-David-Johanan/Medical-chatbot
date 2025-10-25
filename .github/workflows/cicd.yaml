@@ -2,7 +2,7 @@ name: Deploy Application Docker Image to EC2 instance
 
 on:
   push:
-    #branches: [main] # run CI on pushes to main
+    branches: [main] # run CI on pushes to main
     tags:
       - "v*" # run both CI & CD on version tags
 jobs:

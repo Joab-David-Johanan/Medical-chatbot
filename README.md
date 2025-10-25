@@ -133,7 +133,7 @@ newgrp docker
 - PINECONE_API_KEY
 - OPENAI_API_KEY
 
-### 8. Ensure conditional deployment with tags
+### 8. Ensure conditional integration and deployment with tags
 
 1. Make sure all your changes (including YAML) are committed
 
