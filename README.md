@@ -2,6 +2,14 @@
 
 This repo is used to create a medical chatbot using a RAG pipeline.
 
+## Techstack used:
+
+- Python
+- Langchain
+- Pinecone
+- OpenAI models
+- Flask
+
 ## Steps to run the program:
 
 ### 1. Create and clone the repository
@@ -75,8 +83,8 @@ python app.py
 ### 4. Create a EC2 instance (Ubuntu)
 
       # Allow HTTPS requests.
-      # Choose 30gb storage
-      # Choose 8gb machine
+      # Choose 8gb machine.
+      # Choose 30gb storage.
 
 ### 5. Launch the EC2 instance and install Docker in the EC2 instance
 
@@ -112,12 +120,4 @@ newgrp docker
 
 ### 6. Configure EC2 instance as a self-hosted runner:
 
-      settings-->actions-->runner-->new self hosted runner--> choose os-->then run command one by one
-
-## Techstack used:
-
-- Python
-- Langchain
-- Pinecone
-- OpenAI models
-- Flask
+      settings-->actions-->runner-->new self hosted runner-->choose os-->then run command one by one
