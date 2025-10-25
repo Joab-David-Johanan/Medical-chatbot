@@ -118,6 +118,15 @@ sudo usermod -aG docker ubuntu
 newgrp docker
 ```
 
-### 6. Configure EC2 instance as a self-hosted runner:
+### 6. Configure EC2 instance as a self-hosted runner
 
       settings-->actions-->runner-->new self hosted runner-->choose os-->then run command one by one
+
+### 7. Setup Github secrets
+
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_DEFAULT_REGION
+- ECR_REPO_NAME
+- PINECONE_API_KEY
+- OPENAI_API_KEY
