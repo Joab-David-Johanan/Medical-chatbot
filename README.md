@@ -1,5 +1,7 @@
 # Medical-chatbot
 
+[![CI/CD](https://github.com/Joab-David-Johanan/Medical-chatbot/actions/workflows/cicd.yaml/badge.svg)](https://github.com/Joab-David-Johanan/Medical-chatbot/actions)
+
 This repo is used to create a medical chatbot using a RAG pipeline.
 
 ## Techstack used:
@@ -133,26 +135,26 @@ newgrp docker
 
 ### 8. Ensure conditional deployment with tags
 
-      # 1. Make sure all your changes (including YAML) are committed
+1. Make sure all your changes (including YAML) are committed
 
 ```bash
 git add .
 git commit -m "Initial commit with CI/CD"
 ```
 
-      # 2. Push your code to GitHub
+2. Push your code to GitHub
 
 ```bash
 git push origin main
 ```
 
-      # 3. Create a version tag for deployment
+3. Create a version tag for deployment
 
 ```bash
 git tag -a v1.0.0 -m "Initial release"
 ```
 
-      # 4. Push that tag to GitHub (triggers deployment)
+4. Push that tag to GitHub (triggers deployment)
 
 ```bash
 git push origin v1.0.0
