@@ -80,37 +80,39 @@ python app.py
 
 ### 5. Launch the EC2 instance and install Docker in the EC2 instance
 
-    # optional
+```bash
+# optional
+sudo apt-get update -y
+```
 
-    ```bash
-    sudo apt-get update -y
-    ```
+```bash
+# optional
+sudo apt-get upgrade
+```
 
-    ```bash
-    sudo apt-get upgrade
-    ```
+```bash
+# required
+curl -fsSL https://get.docker.com -o get-docker.sh
+```
 
-    # required
+```bash
+# required
+sudo sh get-docker.sh
+```
 
-    ```bash
-    curl -fsSL https://get.docker.com -o get-docker.sh
-    ```
+```bash
+# required
+sudo usermod -aG docker ubuntu
+```
 
-    ```bash
-    sudo sh get-docker.sh
-    ```
-
-    ```bash
-    sudo usermod -aG docker ubuntu
-    ```
-
-    ```bash
-    newgrp docker
-    ```
+```bash
+# required
+newgrp docker
+```
 
 ### 6. Configure EC2 instance as a self-hosted runner:
 
-      setting>actions>runner>new self hosted runner> choose os> then run command one by one
+      settings-->actions-->runner-->new self hosted runner--> choose os-->then run command one by one
 
 ## Techstack used:
 
