@@ -1,6 +1,11 @@
 # Medical-chatbot
 
 [![CI/CD](https://github.com/Joab-David-Johanan/Medical-chatbot/actions/workflows/cicd.yaml/badge.svg)](https://github.com/Joab-David-Johanan/Medical-chatbot/actions)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20Framework-green)
+![Docker](https://img.shields.io/badge/Docker-ready-blue)
+![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20ECR-orange)
+![MLOps](https://img.shields.io/badge/MLOps-CI%2FCD%20pipeline-yellow)
 
 This repo is used to create a medical chatbot using a RAG pipeline.
 
