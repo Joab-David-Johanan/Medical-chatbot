@@ -90,33 +90,31 @@ python app.py
 
 ### 5. Launch the EC2 instance and install Docker in the EC2 instance
 
+1. optional
+
 ```bash
-# optional
 sudo apt-get update -y
 ```
 
 ```bash
-# optional
 sudo apt-get upgrade
 ```
 
+2. required
+
 ```bash
-# required
 curl -fsSL https://get.docker.com -o get-docker.sh
 ```
 
 ```bash
-# required
 sudo sh get-docker.sh
 ```
 
 ```bash
-# required
 sudo usermod -aG docker ubuntu
 ```
 
 ```bash
-# required
 newgrp docker
 ```
 
