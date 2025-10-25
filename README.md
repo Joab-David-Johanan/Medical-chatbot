@@ -80,21 +80,33 @@ python app.py
 
 ### 5. Launch the EC2 instance and install Docker in the EC2 instance
 
-      # optinal
+    # optional
 
-      ```bash
-      # Save the URI
-      315865595366.dkr.ecr.us-east-1.amazonaws.com/medicalbot
-      ```
-      sudo apt-get update -y
-      sudo apt-get upgrade
+    ```bash
+    sudo apt-get update -y
+    ```
 
-      # required
+    ```bash
+    sudo apt-get upgrade
+    ```
 
-      curl -fsSL https://get.docker.com -o get-docker.sh
-      sudo sh get-docker.sh
-      sudo usermod -aG docker ubuntu
-      newgrp docker
+    # required
+
+    ```bash
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    ```
+
+    ```bash
+    sudo sh get-docker.sh
+    ```
+
+    ```bash
+    sudo usermod -aG docker ubuntu
+    ```
+
+    ```bash
+    newgrp docker
+    ```
 
 ### 6. Configure EC2 instance as a self-hosted runner:
 
