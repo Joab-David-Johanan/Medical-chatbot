@@ -62,6 +62,10 @@ python app.py
       1. EC2 access: For setting up a virtual server.
       2. ECR access: Elastic container registry to save your docker image in aws.
 
+      # Policy
+      1. AmazonEC2ContainerRegistryFullAccess
+      2. AmazonEC2FullAccess
+
       # Description: About the deployment
       1. Build Docker image of the source code.
       2. Push your Docker image to ECR.
@@ -69,21 +73,17 @@ python app.py
       4. Pull your Docker image from ECR to EC2.
       5. Launch your Docker image in EC2.
 
-      # Policy
-      1. AmazonEC2ContainerRegistryFullAccess
-      2. AmazonEC2FullAccess
-
 ### 3. Create ECR repo to store/save Docker image
 
 ```bash
 # Save the URI
-315865595366.dkr.ecr.us-east-1.amazonaws.com/medicalbot
+454041007932.dkr.ecr.us-east-1.amazonaws.com/medical-bot
 ```
 
 ### 4. Create a EC2 instance (Ubuntu)
 
-      # Allow HTTPS requests.
-      # Choose 8gb machine.
+      # Allow HTTPS and HTTP traffic.
+      # Choose 8gb instance (t2.large).
       # Choose 30gb storage.
 
 ### 5. Launch the EC2 instance and install Docker in the EC2 instance
