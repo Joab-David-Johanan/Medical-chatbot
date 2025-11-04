@@ -162,3 +162,13 @@ git tag -a v1.0.0 -m "Initial release"
 ```bash
 git push origin v1.0.0
 ```
+
+### 9. Features to include
+
+- Advanced chunking techniques
+- Hybrid search strategies
+- Query Enhancement techniques
+- Multimodal RAG techniques
+- Guardrails
+- Cache for faster response times
+- Custom Javascript frontend with python backend (flask)
