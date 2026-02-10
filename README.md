@@ -25,6 +25,7 @@ This repo is used to create a medical chatbot using a RAG pipeline.
 
 ## Project structure:
 
+```
 Medical-chatbot
 ├── .github
 │   └── workflows
@@ -56,6 +57,7 @@ Medical-chatbot
 ├── setup.py
 ├── template.sh
 └── uv.lock
+```
 
 ## Steps to run the program:
 
