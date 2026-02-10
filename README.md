@@ -23,6 +23,40 @@ This repo is used to create a medical chatbot using a RAG pipeline.
       - ECR
       - EC2
 
+## Project structure:
+
+Medical-chatbot
+├── .github
+│   └── workflows
+│       └── cicd.yaml
+├── data
+│   └── Medical_book.pdf
+├── research
+│   ├── .ipynb_checkpoints
+│   │   └── trail-checkpoint.ipynb
+│   └── trail.ipynb
+├── scripts
+│   └── generate_tree.sh
+├── src
+│   ├── __init__.py
+│   ├── helper.py
+│   ├── prompt.py
+│   └── store_index.py
+├── static
+│   └── style.css
+├── templates
+│   └── index.html
+├── .env
+├── .gitignore
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── app.py
+├── requirements.txt
+├── setup.py
+├── template.sh
+└── uv.lock
+
 ## Steps to run the program:
 
 ### 1. Create and clone the repository
