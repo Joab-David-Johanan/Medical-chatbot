@@ -12,10 +12,16 @@ This repo is used to create a medical chatbot using a RAG pipeline.
 ## Techstack used:
 
 - Python
-- Langchain
+- LangChain
 - Pinecone
 - OpenAI models
+- Docker
+- Github Actions
 - Flask
+- AWS Cloud
+      - IAM
+      - ECR
+      - EC2
 
 ## Steps to run the program:
 
